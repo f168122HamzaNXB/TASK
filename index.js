@@ -6,9 +6,9 @@ const bodyParser = require("body-parser");
 let studentRoutes = require("./routes/studentRoutes");
 
 const app = express();
-const port = 8080;
+const port = process.env.PORT;
 
-mongoose.connect("mongodb+srv://mongouser:VQcc3C38HM97TMpU@firstcluster.5orad.mongodb.net/myDb?retryWrites=true&w=majority", {
+mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@firstcluster.5orad.mongodb.net/${process.env.DB_HOST}?retryWrites=true&w=majority`, {
     useNewUrlParser: true, 
     useCreateIndex: true, 
     useUnifiedTopology: true
