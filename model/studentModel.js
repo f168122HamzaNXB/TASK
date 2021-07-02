@@ -13,6 +13,16 @@ const studentSchema = Schema({
         required: true,
     },
 
+    email:{
+        type: String,
+        required: true,
+    },
+
+    hashPassword:{
+        type: String,
+        required: true,
+    },
+
     designation:{
         type: String,
         required: true,
@@ -26,6 +36,10 @@ const studentSchema = Schema({
     country:{
         type: String,
         required: true,
+    },
+
+    token:{
+        type: String,
     },
 
 });

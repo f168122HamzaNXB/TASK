@@ -3,6 +3,7 @@ require('dotenv').config();
 let cors = require('cors');
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const jwt = require('./jwt');
 let studentRoutes = require("./routes/studentRoutes");
 
 const app = express();
@@ -19,6 +20,8 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true }));
 app.use(bodyParser.json());
+app.use(jwt());
+
 
 app.get("/", (req, res) => {
     res.send('Hello World with Express')
